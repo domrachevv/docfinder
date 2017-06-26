@@ -13,7 +13,7 @@ Include:
  
 - Full include from [Minko Gechev's](https://github.com/mgechev) [angular2-seed](https://github.com/mgechev/angular2-seed).
 - [Express](https://expressjs.com/) Express Node.js server for production/development build API.
-- [PM2](http://pm2.keymetrics.io/) daemon for a server running.
+- [PM2](http://pm2.keymetrics.io/) daemon for running a server.
 - [Nginx](https://github.com/vyakymenko/angular2-nginx-config-example/blob/master/ng2-application.conf) configuration file for your server.
 
 # Fast start
@@ -67,7 +67,7 @@ Express server run for prod build.
 
 ```sh
 # run Express server (keep in touch, only after `npm run build.prod` )
-# keep in mind that prod build will be builded with prod env flag
+# keep in mind that prod build will be built with prod env flag
 $ node app.server.prod.js
 
 # run Express server in dev mode
@@ -76,14 +76,14 @@ $ node app.server.dev.js
 
 # Daemonize Server
 
-For daemonize your server I propose to uze `PM2`.
+To daemonize your server I propose to uze `PM2`.
 ```sh
-# before daemonize production server `npm run build.prod`
+# before daemonizing production server `npm run build.prod`
 $ pm2 start app.server.prod.js
 
 # restart only your project
 $ pm restart <id>
-# restart all project on daemon
+# restart all projects on daemon
 $ pm2 restart all
 
 # in cluster mode ( example 4 workers )
