@@ -199,7 +199,7 @@ var _clientDir = '../client'; // Dist prod folder.
 ```js
 // Configure server Port ( keep in mind that this important if you will use reverse-proxy)
 // Dev mode will give you only middleware.
-// WARNING! DEPEND ON YOUR Angular2 SEED PROJECT API CONFIG!
+// WARNING! DEPENDS ON YOUR Angular2 SEED PROJECT API CONFIG!
 /**
  * @ng2 Server Runner `Development`.
  */
@@ -210,7 +210,7 @@ require('./server')(9001, 'dev');
 ```js
 // Configure server Port ( keep in mind that this important if you will use reverse-proxy)
 // Prod mode give you middleware + static.
-// WARNING! DEPEND ON YOUR Angular2 SEED PROJECT API CONFIG!
+// WARNING! DEPENDS ON YOUR Angular2 SEED PROJECT API CONFIG!
 /**
  * @ng2 Server Runner `Production`.
  */
