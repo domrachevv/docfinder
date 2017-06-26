@@ -1,0 +1,87 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Start server debug (full)",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "build.dev_full",
+      "program": "${workspaceRoot}/app.server.dev.js",
+      "cwd": "${workspaceRoot}",
+      "outFiles": [
+        "${workspaceRoot}/dist/dev/server/**/*.js"
+      ]
+    },
+    {
+      "name": "Start server debug (fast)",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "build.dev",
+      "program": "${workspaceRoot}/app.server.dev.js",
+      "cwd": "${workspaceRoot}",
+      "outFiles": [
+        "${workspaceRoot}/dist/dev/**/*.js"
+      ]
+    },
+    {
+      "name": "Start server debug (no rebuild)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/app.server.dev.js",
+      "cwd": "${workspaceRoot}",
+      "outFiles": [
+        "${workspaceRoot}/dist/dev/server/**/*.js"
+      ]
+    },
+    {
+      "name": "Start server debug (prod)",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "build.prod",
+      "program": "${workspaceRoot}/app.server.prod.js",
+      "cwd": "${workspaceRoot}"
+    },
+    {
+      "name": "Start server debug (prod no rebuild)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/app.server.prod.js",
+      "cwd": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "run.tests",
+      "name": "Mocha tests",
+      "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+      "args": ["${workspaceRoot}/dist/dev/tests/**/*.js", "--no-timeouts"],
+      "cwd": "${workspaceRoot}",
+      "stopOnEntry": false,
+      "sourceMaps": true,
+      "runtimeExecutable": null,
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "name": "Launch Chrome against localhost, with sourcemaps",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:9001",
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}/src/client",
+      "sourceMapPathOverrides": {
+        "app/*": "${webRoot}/app/*"
+      }
+    },
+    {
+      "name": "Attach to Chrome, with sourcemaps",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}/src/client",
+      "sourceMapPathOverrides": {
+        "app/*": "${webRoot}/app/*"
+      }
+    }
+  ]
+}
